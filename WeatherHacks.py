@@ -10,7 +10,7 @@ import json #JSONを扱うため
 
 from xml.dom import minidom #minidom、XML解析用
 
-from pp import pp #pp関数用（O'REILLY社 入門自然言語処理 p.469）
+#from pp import pp #pp関数用（O'REILLY社 入門自然言語処理 p.469）
 
 #import Skype4Py
 
@@ -122,7 +122,7 @@ def WeatherReport(msg):
     else:
 	#msg.Chat.SendMessage(u"地名が分かりませんでした。")
 
-        print u"ハル: 地名が分かりませんでした。"
+        print u"kobako: 地名が分かりませんでした。"
 
         return
 
@@ -147,7 +147,7 @@ def WeatherReport(msg):
     #title を表示
     #msg.Chat.SendMessage(jdoc["title"] + u"をお知らせします。")
 
-    print u"ハル: " + jdoc["title"] + u"をお知らせします。"
+    print u"kobako: " + jdoc["title"] + u"をお知らせします。"
 
     
 
@@ -158,28 +158,28 @@ def WeatherReport(msg):
         #天気を表示
 	#msg.Chat.SendMessage(forecast["dateLabel"] + "(" + forecast["date"]+ u") の天気は " + forecast["telop"] + u" です。")
 
-        print u"ハル: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の天気は " + forecast["telop"] + u" です。"
+        print u"kobako: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の天気は " + forecast["telop"] + u" です。"
 
         #気温を表示
 
         try:
 
 		#msg.Chat.SendMessage(forecast["dateLabel"] + "(" + forecast["date"]+ u") の最高気温は " + forecast["temperature"]["max"]["celsius"] + u"℃ です。最低気温は " + forecast["temperature"]["min"]["celsius"] + u"℃ です。")            
-		print u"ハル: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の最高気温は " + forecast["temperature"]["max"]["celsius"] + u"℃ です。最低気温は " + forecast["temperature"]["min"]["celsius"] + u"℃ です。"
+		print u"kobako: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の最高気温は " + forecast["temperature"]["max"]["celsius"] + u"℃ です。最低気温は " + forecast["temperature"]["min"]["celsius"] + u"℃ です。"
 
         except:
 
             #気温が未発表のときは TypeError: 'NoneType' object has no attribute '__getitem__'　でエラーになる。
             #msg.Chat.SendMessage(forecast["dateLabel"] + "(" + forecast["date"]+ u") の気温は、まだ発表されていません。")
 
-            print u"ハル: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の気温は、まだ発表されていません。"
+            print u"kobako: " + forecast["dateLabel"] + "(" + forecast["date"]+ u") の気温は、まだ発表されていません。"
 
 
 
     #お天気情報テキストを表示
     #msg.Chat.SendMessage(jdoc["description"]["text"] + "\n" + " (" + jdoc["description"]["publicTime"] + ")")
 
-    print u"ハル: \n" + jdoc["description"]["text"]
+    print u"kobako: \n" + jdoc["description"]["text"]
 
     print u" (" + jdoc["description"]["publicTime"] + ")"
 
